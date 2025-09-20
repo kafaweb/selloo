@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -22,6 +25,13 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+        },
+        selloo: {
+          green: "hsl(var(--selloo-green))",
+          "green-light": "hsl(var(--selloo-green-light))",
+          gray: "hsl(var(--selloo-gray))",
+          "gray-light": "hsl(var(--selloo-gray-light))",
+          "gray-lighter": "hsl(var(--selloo-gray-lighter))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
