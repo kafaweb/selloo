@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import qrCodeImage from '@/assets/qr-code-placeholder.png';
+import sellooLogo from '@/assets/selloo-logo.png';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -10,11 +11,12 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-selloo-green-light selloo-section">
       <div className="selloo-container text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Logo */}
           <div className="mb-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-selloo-green mb-2">
-              Selloo
-            </h1>
+            <img
+              src={sellooLogo}
+              alt="Selloo Logo"
+              className="h-16 sm:h-20 lg:h-24 mx-auto"
+            />
           </div>
 
           {/* Hero Title */}
