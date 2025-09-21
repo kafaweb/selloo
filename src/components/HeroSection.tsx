@@ -3,6 +3,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import qrCodeImage from '@/assets/qr-code-placeholder.png';
 import sellooLogo from '@/assets/selloo-logo.png';
+import appStoreBadge from '@/assets/app-store-badge.svg';
+import googlePlayBadge from '@/assets/google-play-badge.svg';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -42,29 +44,27 @@ const HeroSection = () => {
 
           {/* App Store Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Button 
-              asChild 
-              className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-xl h-auto"
+            <a 
+              href="#" 
+              className="transition-transform hover:scale-105"
             >
-              <a href="#" className="flex items-center gap-3">
-                <div className="text-left">
-                  <div className="text-xs">Download on the</div>
-                  <div className="text-lg font-semibold">App Store</div>
-                </div>
-              </a>
-            </Button>
+              <img
+                src={appStoreBadge}
+                alt="Download on the App Store"
+                className="h-14 w-auto"
+              />
+            </a>
             
-            <Button 
-              asChild 
-              className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-xl h-auto"
+            <a 
+              href="#" 
+              className="transition-transform hover:scale-105"
             >
-              <a href="#" className="flex items-center gap-3">
-                <div className="text-left">
-                  <div className="text-xs">Get it on</div>
-                  <div className="text-lg font-semibold">Google Play</div>
-                </div>
-              </a>
-            </Button>
+              <img
+                src={googlePlayBadge}
+                alt="Get it on Google Play"
+                className="h-14 w-auto"
+              />
+            </a>
           </div>
 
           {/* QR Text */}
