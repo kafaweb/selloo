@@ -15,6 +15,13 @@ const translations = {
     heroSubtitle: "Ứng dụng mua bán thông minh cho cộng đồng Việt Nam",
     qrText: "Quét mã QR hoặc bấm nút để tải ứng dụng Selloo.",
     
+    // Why download section
+    whyDownloadTitle: "Vì sao nên tải Selloo?",
+    whyPoint1: "Đăng bán quần áo chỉ trong vài giây",
+    whyPoint2: "Tìm đồ gần bạn với bộ lọc thông minh",
+    whyPoint3: "Chat trực tiếp, đơn giản và an toàn",
+    whyPoint4: "Tài khoản nâng cao cho người bán chuyên nghiệp",
+    
     // Features section
     featuresTitle: "Tính năng nổi bật",
     feature1: "Đăng tin trong 60 giây",
@@ -49,6 +56,13 @@ const translations = {
     heroTitle: "Buy and Sell with Ease on Selloo",
     heroSubtitle: "Smart marketplace app for Vietnamese community",
     qrText: "Scan the QR code or click a button to download Selloo.",
+    
+    // Why download section
+    whyDownloadTitle: "Why download Selloo?",
+    whyPoint1: "Post clothes for sale in seconds",
+    whyPoint2: "Find items nearby with smart filters",
+    whyPoint3: "Chat directly, simple and safe",
+    whyPoint4: "Advanced accounts for pro sellers",
     
     // Features section
     featuresTitle: "Key Features",
