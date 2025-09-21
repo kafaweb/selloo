@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import qrCodeImage from '@/assets/qr-code-placeholder.png';
 import sellooLogo from '@/assets/selloo-logo.png';
 import appStoreBadge from '@/assets/app-store-badge.svg';
-import googlePlayBadge from '@/assets/google-play-badge.svg';
+import googlePlayBadge from '@/assets/google-play-badge-modern.png';
 
 const HeroSection = () => {
   const { t } = useLanguage();
