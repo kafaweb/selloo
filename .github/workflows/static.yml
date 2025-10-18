@@ -16,6 +16,8 @@ permissions:
 jobs:
   # Job de construction et de déploiement
   build-and-deploy:
+    environment: # AJOUTÉ : Définit l'environnement de déploiement
+      name: github-pages # AJOUTÉ : Nom de l'environnement standard
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,11 +29,9 @@ jobs:
           node-version: 20 # Version de Node.js (peut être '18' ou '20')
 
       - name: Install dependencies (Installation des dépendances)
-        # Utiliser npm install, car package.json est présent
         run: npm install
 
       - name: Build project (Compilation du site)
-        # Cette commande génère les fichiers finaux (le site web)
         run: npm run build
 
       - name: Setup Pages
@@ -40,8 +40,7 @@ jobs:
       - name: Upload artifact (Téléchargement du résultat compilé)
         uses: actions/upload-pages-artifact@v3
         with:
-          # VITE place par défaut le résultat de la compilation dans le dossier 'dist'
-          path: ./dist # Laissez 'dist' sauf si Lovable génère dans un autre dossier
+          path: ./dist # Le dossier de sortie de Vite
 
       - name: Deploy to GitHub Pages
         id: deployment
