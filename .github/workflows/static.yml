@@ -1,0 +1,48 @@
+# Ce workflow est déclenché lors d'un push vers la branche 'main'
+name: Déploiement du site
+
+on:
+  push:
+    branches:
+      - main  # Déclenche le workflow sur un push vers la branche principale
+  workflow_dispatch: # Permet de lancer le workflow manuellement
+
+# Permissions nécessaires pour le déploiement
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # Job de construction et de déploiement
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # Récupère le code du dépôt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Version de Node.js (peut être '18' ou '20')
+
+      - name: Install dependencies (Installation des dépendances)
+        # Utiliser npm install, car package.json est présent
+        run: npm install
+
+      - name: Build project (Compilation du site)
+        # Cette commande génère les fichiers finaux (le site web)
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact (Téléchargement du résultat compilé)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # VITE place par défaut le résultat de la compilation dans le dossier 'dist'
+          path: ./dist # Laissez 'dist' sauf si Lovable génère dans un autre dossier
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
